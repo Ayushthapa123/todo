@@ -1,0 +1,29 @@
+.app {
+    min-width: 500px;
+    max-width: 60%;
+    height:auto;
+    margin:auto;
+    margin-top: 30px;
+    background-color: rgb(27,27,27);
+    background-color: rgb(26, 32, 44);
+    color:white;
+    padding:50px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+.app-title h1 {
+    color:orange;
+    font-size: 2.8rem;
+}
+
+.moonicon {
+    position: absolute;
+    width:40px;
+    height:40px;
+    top:20px;
+    right:20px;
+    color:white;
+    font-size: 30px;
+   
+}
