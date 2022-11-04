@@ -9,8 +9,9 @@ import {ImCheckboxUnchecked} from 'react-icons/im';
 import {ImCheckboxChecked} from 'react-icons/im'
 
 export default function Lists(props) {
+
 const {todolists,setTodolists,setShowupdatebutton,setUpdateindex,setTask,
-    setDescription,setCategory,categories,category}=props;
+      setDescription,setCategory,categories,category}=props;
 
 
  const [filter,setFilter]=useState('all');
@@ -21,7 +22,7 @@ const {todolists,setTodolists,setShowupdatebutton,setUpdateindex,setTask,
 
 
 const DeleteTask=(e)=> {
-    let deleteid=e.target.parentElement.parentElement.parentElement.parentElement.parentElement.id;
+let deleteid=e.target.parentElement.parentElement.parentElement.parentElement.parentElement.id;
 if(deleteid) {
     let deleteindex=todolists.findIndex( element => {
         if (element.id == deleteid) {
@@ -48,11 +49,11 @@ if(updateid) {
       });
 
 
-setShowupdatebutton(true);
-setTask(todolists[localupdateindex].task);
-setDescription(todolists[localupdateindex].description);
-setCategory(todolists[localupdateindex].category);
-setUpdateindex(localupdateindex);
+    setShowupdatebutton(true);
+    setTask(todolists[localupdateindex].task);
+    setDescription(todolists[localupdateindex].description);
+    setCategory(todolists[localupdateindex].category);
+    setUpdateindex(localupdateindex);
 }
 }
 
@@ -71,6 +72,7 @@ const MarkComplete=(e)=> {
     setTodolists(newtodolists);
     }
     
+
     }
 
 
@@ -81,6 +83,7 @@ const ClearAll=()=> {
 
 
 const Changecolor=(e)=> {
+    
     let collection=document.getElementsByClassName('filterbutton');
     
     for (let x=0;x<collection.length;x++) {
@@ -161,7 +164,7 @@ const Changecolor=(e)=> {
        }
          }).map((list,index)=> (
                 <div key={list.id} id={list.id}>
-                    <p>{!todolists[index].completed &&<i onClick={(e)=>MarkComplete(e)}><ImCheckboxUnchecked/></i>}{todolists[index].completed &&<i onClick={(e)=>MarkComplete(e)}><ImCheckboxChecked/></i>}<b>{list.task}</b> <span><i onClick={(e)=>MarkUpdate(e)}><FaPenSquare/></i> | <i onClick={(e)=>DeleteTask(e)}><AiTwotoneDelete/></i></span></p>
+                    <p>{!list.completed &&<i onClick={(e)=>MarkComplete(e)}><ImCheckboxUnchecked/></i>}{list.completed &&<i onClick={(e)=>MarkComplete(e)}><ImCheckboxChecked/></i>}<b>{list.task}</b> <span><i onClick={(e)=>MarkUpdate(e)}><FaPenSquare/></i> | <i onClick={(e)=>DeleteTask(e)}><AiTwotoneDelete/></i></span></p>
                     <i>{list.description}</i>
                     
                     <hr/>

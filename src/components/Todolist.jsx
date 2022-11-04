@@ -10,7 +10,7 @@ export default function Todolist() {
 const [todolists,setTodolists]=useState([]);
 const [task,setTask]=useState('');
 const [description,setDescription]=useState('');
-const [category,setCategory]=useState('');
+const [category,setCategory]=useState('general');
 const [showupdatebutton,setShowupdatebutton]=useState(false);
 const [updateindex,setUpdateindex]=useState('');
 
@@ -19,19 +19,18 @@ const [customcategory,setCustomcategory]=useState('');
 
 
 const updateTodoList=(e)=> {
-  e.preventDefault();
- 
+e.preventDefault();
 let newtodolist=[...todolists];
-if(task.length>1) {
-newtodolist.push({id:uuid(),task:task,description,category,completed:false});
-setTodolists(newtodolist);
+   if(task.length>1) {
+     newtodolist.push({id:uuid(),task:task,description,category,completed:false});
+     setTodolists(newtodolist);
 
-setTask('')
-setDescription('')
-// setCategory('general')
+     setTask('')
+     setDescription('')
+    // setCategory('general')
 
-}else {
-  alert("Can not add an Empty List")
+    }else {
+       alert("Can not add an Empty List")
 }
 
 
@@ -46,29 +45,28 @@ const UpdateTask=(e)=> {
 
   if(updateindex>-1) {
     
-  let newtodolists=[...todolists];
-  newtodolists[updateindex].task=task;
-  newtodolists[updateindex].description=description;
-  newtodolists[updateindex].category=category;
-  setTodolists(newtodolists);
-  setTask('');
-  setDescription('');
-  // setCategory('');
+     let newtodolists=[...todolists];
+     newtodolists[updateindex].task=task;
+     newtodolists[updateindex].description=description;
+     newtodolists[updateindex].category=category;
+     setTodolists(newtodolists);
+     setTask('');
+     setDescription('');
+     // setCategory('');
   }
 }
 
 const Addcustomcategory=()=> {
   if(customcategory.length>1) {
-let newcategories=[...categories];
-newcategories.push(customcategory);
-setCategories(newcategories);
-setCustomcategory('')
+     let newcategories=[...categories];
+     newcategories.push(customcategory);
+     setCategories(newcategories);
+     setCustomcategory('')
   }else {
     alert("can not add empty category")
   }
 
 }
-
 
 
   return (
