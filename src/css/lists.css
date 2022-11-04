@@ -1,25 +1,77 @@
+.todolistscontainer {
+    width:100%;
+    height:auto;
+    position: relative;
+}
+.filtercategories {
+
+width:100%;
+min-height: 50px;
+position: absolute;
+top:0px;
+right:0;
+display: grid;
+grid-template-columns: 45% 55%;
+}
+.filtercategories button {
+    padding: 3px;
+    padding-left: 9px;
+    padding-right: 9px;
+    color:white;
+    background-color: black;
+    border:2px solid rgb(148, 141, 141);
+    border-radius: 3px;
+    margin:10px;
+    cursor: pointer;
+    border-radius: 2px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: all 0.3s linear 0s;
+}
+
 
 .todolists {
     width:90%;
     margin:auto;
-    min-height: 200px;
+    min-height: 180px;
+    max-height: 300px;
     border:2px solid white;
     border-radius: 5px;
-    /* position: relative; */
+    position: relative;
     text-align: left;
     padding: 20px;
+    padding-top: 90px;
     box-sizing: border-box;
+    overflow-y: scroll;
     
 }
 
 .todolists p {
     position: relative;
+    margin:0px;
+    padding:0px;
+    
+}
+.todolists i {
+    font-size: 0.7rem;
+    margin:0px;
+    padding:0px;
 }
 .todolists p span {
     position: absolute;
     right:0;
     cursor: pointer;
     font-size: 20px;
+}
+.todolists p b {
+    position: relative;
+    left:10px;
+}
+.todolists p i {
+    font-size: 20px;
+    position: relative;
+    top:4px;
+   
 }
 
 .clearall {
@@ -36,4 +88,10 @@
     padding-right: 18px;
     cursor: pointer;
     font-size: 1.2rem;
+}
+
+
+
+.active {
+    background-color: red;
 }
